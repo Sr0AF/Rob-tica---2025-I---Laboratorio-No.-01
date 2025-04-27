@@ -19,6 +19,9 @@ flowchart TD;
   setup-dev--> bci--> nodo --> leer--> fin
 ```
 ---
+config:
+      theme: redux
+---
 flowchart TD
         A(["Start"])
         A --> B{"Decision"}
