@@ -18,7 +18,7 @@ flowchart TD;
 
   setup-dev--> bci--> nodo --> leer--> fin
 ```
-
+---
 flowchart TD
         A(["Start"])
         A --> B{"Decision"}
