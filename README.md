@@ -18,6 +18,8 @@ flowchart TD;
 
   setup-dev--> bci--> nodo --> leer--> fin
 ```
+
+holaaa
 Inicio
 ⬇️
 Inicializar ROS2
