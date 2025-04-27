@@ -19,6 +19,12 @@ flowchart TD;
   setup-dev--> bci--> nodo --> leer--> fin
 ```
 
+flowchart TD
+        A(["Start"])
+        A --> B{"Decision"}
+        B --> C["Option A"]
+        B --> D["Option B"]
+
 holaaa
 Inicio
 ⬇️
