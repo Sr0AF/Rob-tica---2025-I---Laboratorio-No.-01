@@ -9,8 +9,32 @@ Andrés Felipe Quenan Pozo - `aquenan@unal.edu.co`
 ```mermaid
 flowchart TD;
 
-  setup-dev((Setup))
-  bci(Build)
+  setup-dev((Inicio))
+  bci(Inicializar ROS2)
+  nodo(Crear Nodo)
+  leer(Leer Teclado)
+  fin((fin))
+  
 
-  setup-dev--> bci
+  setup-dev--> bci--> nodo --> leer
 ```
+Inicio
+⬇️
+Inicializar ROS2
+⬇️
+Crear Nodo TurtleController
+⬇️
+Iniciar un hilo para leer el teclado (keyboard_loop)
+⬇️
+Mientras el programa esté corriendo:
+→ Esperar una tecla
+→ Si es una flecha: mover la tortuga
+→ Si es una letra (A, F, Q, etc.): dibujar la letra correspondiente
+→ Si es Ctrl+C: salir
+⬇️
+Destruir el nodo
+⬇️
+Shutdown de ROS2
+⬇️
+Fin
+
