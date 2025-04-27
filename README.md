@@ -7,6 +7,8 @@ Andrés Felipe Quenan Pozo - `aquenan@unal.edu.co`
 
 # Diagrama de flujo del controlador de la tortuga
 ```mermaid
+flowchart TD;
+
   setup-dev((Setup))
   bci(Build)
 
