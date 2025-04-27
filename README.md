@@ -4,7 +4,7 @@
 Maria Lucia Arias Ortiz - `mariasor@unal.edu.co`  
 Andrés Felipe Quenan Pozo - `aquenan@unal.edu.co`
 ***
-
+A continuación se explica el desarrollo del laboratotio 1. 
 # Diagrama de flujo del controlador de la tortuga
 ```mermaid
 flowchart TD;
@@ -16,7 +16,7 @@ flowchart TD;
   fin((fin))
   
 
-  setup-dev--> bci--> nodo --> leer
+  setup-dev--> bci--> nodo --> leer--> fin
 ```
 Inicio
 ⬇️
