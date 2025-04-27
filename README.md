@@ -10,5 +10,5 @@ Andrés Felipe Quenan Pozo - `aquenan@unal.edu.co`
   setup-dev((Setup))
   bci(Build)
 
-  setup-dev --> bci
+  setup-dev--> bci
 ```
