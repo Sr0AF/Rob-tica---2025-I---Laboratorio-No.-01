@@ -33,3 +33,4 @@ flowchart TD
 
     S --> T[Finalizar Nodo]
     T --> U[Shutdown de ROS 2]
+```
