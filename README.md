@@ -256,10 +256,10 @@ En este caso para realizar la circunferencia se tiene en cuenta que el tiempo ba
 flowchart TD
     B["Hacer circunferencia completa"] --> C("Hacer arco de ángulo 45°")
     n1(["Inicio draw_Q"]) --> B
-    n2["Girar -90°"] --> n3["Avanzar 1.5"]
+    n2["Girar -90°"] --> n3["Avanzar 1"]
     C --> n2
     n3 --> n9["Girar 180°"]
-    n9 --> n10["Avanzar 3"]
+    n9 --> n10["Avanzar 2"]
     n10 --> n11["Detener movimiento"]
     n11 --> n8(["Fin draw_Q"])
 
@@ -280,4 +280,114 @@ flowchart TD
     style n11 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
     style n8 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
 ```
+
+### Letra P
+```mermaid
+flowchart TD
+    n6["Girar -90°"] --> n7["Hacer media circunferencia"]
+    n1(["Inicio draw_P"]) --> n3["Girar 90°"]
+    n3 --> n17["Avanzar 3"]
+    n17 --> n6
+    n7 --> n18["Girar 90°"]
+    n18 --> n19["Avanzar 1.5"]
+    n19 --> n20["Detener movimiento"]
+    n20 --> n14["Fin draw_P"]
+
+    n14@{ shape: terminal}
+    classDef green fill:#B2DFDB,stroke:#00897B,stroke-width:2px
+    classDef orange fill:#FFE0B2,stroke:#FB8C00,stroke-width:2px
+    classDef blue fill:#BBDEFB,stroke:#1976D2,stroke-width:2px
+    classDef yellow fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px
+    classDef pink fill:#F8BBD0,stroke:#C2185B,stroke-width:2px
+    classDef purple fill:#E1BEE7,stroke:#8E24AA,stroke-width:2px
+    style n6 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n7 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n1 stroke:#000000,stroke-width:1px,stroke-dasharray: 0
+    style n3 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n17 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n18 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n19 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n20 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n14 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+```
+### Letra M
+```mermaid
+flowchart TD
+    B["Girar 90°"] --> C("Avanzar 3")
+    n1(["Inicio draw_"]) --> B
+    n2["Girar -135°"] --> n3["Avanzar 1.4"]
+    C --> n2
+    n3 --> n9["Girar 90°"]
+    n9 --> n10["Avanzar 1.4"]
+    n10 --> n11["Girar -135°"]
+    n11 --> n12["Avanzar 3"]
+    n12 --> n13["Detener movimiento"]
+    n13 --> n8(["Fin draw_M"])
+
+    B@{ shape: rounded}
+    classDef green fill:#B2DFDB,stroke:#00897B,stroke-width:2px
+    classDef orange fill:#FFE0B2,stroke:#FB8C00,stroke-width:2px
+    classDef blue fill:#BBDEFB,stroke:#1976D2,stroke-width:2px
+    classDef yellow fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px
+    classDef pink fill:#F8BBD0,stroke:#C2185B,stroke-width:2px
+    classDef purple fill:#E1BEE7,stroke:#8E24AA,stroke-width:2px
+    style B stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style C stroke:#000000,stroke-width:1px,stroke-dasharray: 0
+    style n1 stroke:#000000,stroke-width:1px,stroke-dasharray: 0
+    style n2 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n3 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n9 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n10 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n11 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n12 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n13 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n8 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+```
+### Letra L
+```mermaid
+flowchart TD
+    B["Girar 90°"] --> C("Avanzar 3")
+    n1(["Inicio draw_L"]) --> B
+    n2["Avanzar 3"] --> n3["Girar -90°"]
+    C --> n2
+    n3 --> n14["Avanzar 2"]
+    n14 --> n15["Detener movimiento"]
+    n15 --> n8(["Fin draw_L"])
+
+    B@{ shape: rounded}
+    classDef green fill:#B2DFDB,stroke:#00897B,stroke-width:2px
+    classDef orange fill:#FFE0B2,stroke:#FB8C00,stroke-width:2px
+    classDef blue fill:#BBDEFB,stroke:#1976D2,stroke-width:2px
+    classDef yellow fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px
+    classDef pink fill:#F8BBD0,stroke:#C2185B,stroke-width:2px
+    classDef purple fill:#E1BEE7,stroke:#8E24AA,stroke-width:2px
+    style B stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style C stroke:#000000,stroke-width:1px,stroke-dasharray: 0
+    style n1 stroke:#000000,stroke-width:1px,stroke-dasharray: 0
+    style n2 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n3 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n14 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n15 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n8 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+```
+### Letra O
+```mermaid
+flowchart TD
+    n1(["Inicio draw_O"]) --> B["Hacer circunferencia completa"]
+    n15["Detener movimiento"] --> n8(["Fin draw_O"])
+    B --> n15
+
+    B@{ shape: rounded}
+    classDef green fill:#B2DFDB,stroke:#00897B,stroke-width:2px
+    classDef orange fill:#FFE0B2,stroke:#FB8C00,stroke-width:2px
+    classDef blue fill:#BBDEFB,stroke:#1976D2,stroke-width:2px
+    classDef yellow fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px
+    classDef pink fill:#F8BBD0,stroke:#C2185B,stroke-width:2px
+    classDef purple fill:#E1BEE7,stroke:#8E24AA,stroke-width:2px
+    style n1 stroke:#000000,stroke-width:1px,stroke-dasharray: 0
+    style B stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n15 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n8 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+```
+# Funcionamiento
 
