@@ -390,4 +390,17 @@ flowchart TD
     style n8 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
 ```
 # Funcionamiento
+Para visualizar las trayectorias es necesario compilar el programa mediante los siguientes comandos para un terminal.
+```
+  cd ros2_ws/turtlesim_ws
+  colcon build
+  source install/setup.bash
+  ros2 run my_turtlesim_controller move_trutle
+```
+Luego en otro terminal ejecutar:
+```
+  ros2 run turtlesim turtlesim_node
+```
+## Flechas:
+Desde el primer terminal es posible controlar la tortuga, a continuación se muestra el funcionamiento de las flechas:
 
