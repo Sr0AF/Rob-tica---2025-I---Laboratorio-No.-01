@@ -404,3 +404,7 @@ Luego en otro terminal ejecutar:
 ## Flechas:
 Desde el primer terminal es posible controlar la tortuga, a continuación se muestra el funcionamiento de las flechas:
 
+# Conclusiones
+- Es necesario ajustar adecuadamente los valores de velocidad y duración de movimientos, ya que pequeñas variaciones alteran significativamente la forma final de las letras.
+- El laboratorio permitió comprender la importancia del control sobre velocidades lineales y angulares para lograr trayectorias deseadas en sistemas móviles.
+- Organizar el código de manera modular (funciones por cada letra) facilitó la programación y depuración.
