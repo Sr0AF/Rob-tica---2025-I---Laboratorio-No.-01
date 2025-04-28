@@ -4,6 +4,9 @@
 Maria Lucia Arias Ortiz - `mariasor@unal.edu.co`  
 Andrés Felipe Quenan Pozo - `aquenan@unal.edu.co`
 ***
+##Video
+A continuación se presenta el video del desarrollo de este laboratorio. https://youtu.be/6MHD8qiw3HI
+
 # Introducción
 El presente trabajo tiene como objetivo explorar y aplicar conceptos básicos de control de robots móviles utilizando el simulador Turtlesim en ROS 2. Se desarrolla un nodo que permite controlar el movimiento de una tortuga virtual mediante la lectura de teclas del teclado, enviando comandos de velocidad en tiempo real. Además, se implementa la capacidad de dibujar trayectorias específicas mediante secuencias programadas de movimientos lineales y rotacionales.
 Este ejercicio permite afianzar conocimientos sobre el sistema de comunicación de ROS 2, desarrolla habilidades de programación en Python, manipulación de mensajes ROS, y control básico de un robot móvil.
