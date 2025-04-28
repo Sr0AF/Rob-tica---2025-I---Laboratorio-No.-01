@@ -167,4 +167,7 @@ flowchart TD
     style n17 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
 ```
 ## 4. Funciones de dibujo
+Teniendo en cuenta que la función `linear.x` controla la velocidad lineal, `angular.z` controla la velocidad angular y `self.wait()` controla el tiempo durante el cual se ejecuta los movimientos, se realiza diferentes trazos teniendo en cuenta la posición y orientación de la tortuga en cada tramo para describir las trayectorias. En cada letra a continuación se describe los pasos para construir la trayectoria considerando que la orientación inicial es hacia la derecha
 ### Letra A:
+
+
