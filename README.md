@@ -14,21 +14,48 @@ Este ejercicio permite afianzar conocimientos sobre el sistema de comunicación 
 * Diseñar funciones específicas que permitan a la tortuga trazar las letras "A", "F", "Q", "P", "M", "L" y "O" correspondientes a las iniciales de nombres y apellidos de los integrantes, a partir de combinaciones de movimientos lineales y rotacionales.
 
 # Procedimiento
-
-
-## Diagrama de flujo del controlador de la tortuga
+El script `move_controller.py` crea un nodo de ROS2, un publisher que envia mensajes tipo Twist y un timer que llama a la función `control_loop` cada 0.1 segundos, cuando sale de dicha función se destruye el nodo y se termina el programa.  
+A continuación se muestra el diagrama de flujo general:
 ```mermaid
-flowchart TD;
+  flowchart TD
+    B["Crear nodo"] --> C("Inicializar nodo")
+    n1(["Inicio"]) --> B
+    n2["Crear publisher"] --> n3["Esperar 0.1 s"]
+    C --> n2
+    n13["Destruir nodo"] --> n8(["Fin"])
+    n3 --> n14["Control loop"]
+    n14 --> n13
 
-  setup-dev((Inicio))
-  bci(Inicializar ROS2)
-  nodo(Crear Nodo)
-  leer(Leer Teclado)
-  fin((fin))
-  
-
-  setup-dev--> bci--> nodo --> leer--> fin
+    B@{ shape: rounded}
+    n14@{ shape: subproc}
+    classDef green fill:#B2DFDB,stroke:#00897B,stroke-width:2px
+    classDef orange fill:#FFE0B2,stroke:#FB8C00,stroke-width:2px
+    classDef blue fill:#BBDEFB,stroke:#1976D2,stroke-width:2px
+    classDef yellow fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px
+    classDef pink fill:#F8BBD0,stroke:#C2185B,stroke-width:2px
+    classDef purple fill:#E1BEE7,stroke:#8E24AA,stroke-width:2px
+    style B stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style C stroke:#000000,stroke-width:1px,stroke-dasharray: 0
+    style n1 stroke:#000000,stroke-width:1px,stroke-dasharray: 0
+    style n2 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n3 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n13 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n8 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n14 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
 ```
+El procedimiento consta de los siguientes pasos:
+## 1. Inicializar nodo:
+En la función main se inicia ROS2, luego se crea una instancia del nodo `TurtleController()`, posteriormente el programa entra en un bucle esperando comandos y cuando termina destruye el nodo y apaga ROS2.
+
+```
+    rclpy.init(args=args)
+    node = TurtleController()
+    rclpy.spin(node)
+    node.destroy_node()
+    rclpy.shutdown()
+```
+## Definir la clase TurtleController:
+Se define la clase TurtleController que hereda de Node
 
 ```mermaid
 ---
