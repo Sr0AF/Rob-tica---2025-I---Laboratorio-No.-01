@@ -167,7 +167,117 @@ flowchart TD
     style n17 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
 ```
 ## 4. Funciones de dibujo
-Teniendo en cuenta que la función `linear.x` controla la velocidad lineal, `angular.z` controla la velocidad angular y `self.wait()` controla el tiempo durante el cual se ejecuta los movimientos, se realiza diferentes trazos teniendo en cuenta la posición y orientación de la tortuga en cada tramo para describir las trayectorias. En cada letra a continuación se describe los pasos para construir la trayectoria considerando que la orientación inicial es hacia la derecha
+Teniendo en cuenta que la función `linear.x` controla la velocidad lineal, `angular.z` controla la velocidad angular y `self.wait()` controla el tiempo durante el cual se ejecuta los movimientos, se realiza diferentes trazos teniendo en cuenta la posición y orientación de la tortuga en cada tramo para describir las trayectorias. En cada letra a continuación se describe los pasos para construir la trayectoria, estableciendo como tiempo base 1 segundo para cada tramo y considerando que la orientación inicial es hacia la derecha
 ### Letra A:
+```mermaid
+flowchart TD
+    B@{ label: "<span style=\"padding-left:\">Girar 45°</span>" } --> C("Avanzar 3")
+    F("Girar -90°") --> G("Avanzar 3")
+    G --> H("Girar 180°")
+    n1(["Inicio draw_A"]) --> B
+    C --> F
+    H --> n2["Avanzar 1.5"]
+    n2 --> n3["Girar 45°"]
+    n3 --> n4["Avanzar 3*cos(45°)"]
+    n4 --> n5["Girar 45°"]
+    n5 --> n6["Avanzar 1.5<br>"]
+    n6 --> n7["Detener movimiento"]
+    n7 --> n8(["Fin draw_A"])
 
+    B@{ shape: rounded}
+    classDef green fill:#B2DFDB,stroke:#00897B,stroke-width:2px
+    classDef orange fill:#FFE0B2,stroke:#FB8C00,stroke-width:2px
+    classDef blue fill:#BBDEFB,stroke:#1976D2,stroke-width:2px
+    classDef yellow fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px
+    classDef pink fill:#F8BBD0,stroke:#C2185B,stroke-width:2px
+    classDef purple fill:#E1BEE7,stroke:#8E24AA,stroke-width:2px
+    style B stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style C stroke:#000000,stroke-width:1px,stroke-dasharray: 0
+    style F stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style G stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style H stroke:#000000,stroke-width:1px,stroke-dasharray: 0
+    style n1 stroke:#000000,stroke-width:1px,stroke-dasharray: 0
+    style n2 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n3 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n4 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n5 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n6 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n7 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n8 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+```
+### Letra F:
+```mermaid
+flowchart TD
+    B["Girar 90°"] --> C("Avanzar 3")
+    F("Girar -90°") --> G("Avanzar 1.5")
+    G --> H("Girar 180°")
+    n1(["Inicio draw_F"]) --> B
+    C --> F
+    H --> n2["Avanzar 1.5"]
+    n2 --> n3["Girar 90°"]
+    n3 --> n4["Avanzar 1.5"]
+    n4 --> n5["Girar 90°"]
+    n5 --> n6["Avanzar 1.5<br>"]
+    n6 --> n7["Girar 180°"]
+    n7 --> n9["Avanzar 1.5"]
+    n9 --> n10["Girar 90°"]
+    n10 --> n11["Avanzar 1.5"]
+    n11 --> n12["Detener movimiento"]
+    n12 --> n8(["Fin draw_F"])
+
+    B@{ shape: rounded}
+    classDef green fill:#B2DFDB,stroke:#00897B,stroke-width:2px
+    classDef orange fill:#FFE0B2,stroke:#FB8C00,stroke-width:2px
+    classDef blue fill:#BBDEFB,stroke:#1976D2,stroke-width:2px
+    classDef yellow fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px
+    classDef pink fill:#F8BBD0,stroke:#C2185B,stroke-width:2px
+    classDef purple fill:#E1BEE7,stroke:#8E24AA,stroke-width:2px
+    style B stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style C stroke:#000000,stroke-width:1px,stroke-dasharray: 0
+    style F stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style G stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style H stroke:#000000,stroke-width:1px,stroke-dasharray: 0
+    style n1 stroke:#000000,stroke-width:1px,stroke-dasharray: 0
+    style n2 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n3 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n4 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n5 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n6 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n7 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n9 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n10 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n11 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n12 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n8 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+```
+### Letra Q
+En este caso para realizar la circunferencia se tiene en cuenta que el tiempo base es 1 segundo, por lo tanto, es necesario una velocidad angular de 2pi rad/s para realizar la circunferencia completa, luego se tomaron las mismas velocidades pero con 1/8 de segundo para trazar 1/8 de circunferencia que corresponde al arco de 45° que recorre la tortuga para posicionarse en donde se hará el trazo final.
+```mermaid
+flowchart TD
+    B["Hacer circunferencia completa"] --> C("Hacer arco de ángulo 45°")
+    n1(["Inicio draw_Q"]) --> B
+    n2["Girar -90°"] --> n3["Avanzar 1.5"]
+    C --> n2
+    n3 --> n9["Girar 180°"]
+    n9 --> n10["Avanzar 3"]
+    n10 --> n11["Detener movimiento"]
+    n11 --> n8(["Fin draw_Q"])
+
+    B@{ shape: rounded}
+    classDef green fill:#B2DFDB,stroke:#00897B,stroke-width:2px
+    classDef orange fill:#FFE0B2,stroke:#FB8C00,stroke-width:2px
+    classDef blue fill:#BBDEFB,stroke:#1976D2,stroke-width:2px
+    classDef yellow fill:#FFF9C4,stroke:#FBC02D,stroke-width:2px
+    classDef pink fill:#F8BBD0,stroke:#C2185B,stroke-width:2px
+    classDef purple fill:#E1BEE7,stroke:#8E24AA,stroke-width:2px
+    style B stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style C stroke:#000000,stroke-width:1px,stroke-dasharray: 0
+    style n1 stroke:#000000,stroke-width:1px,stroke-dasharray: 0
+    style n2 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n3 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n9 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n10 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n11 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+    style n8 stroke-width:1px,stroke-dasharray: 0,stroke:#000000
+```
 
