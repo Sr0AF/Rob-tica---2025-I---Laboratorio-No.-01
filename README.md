@@ -4,7 +4,7 @@
 Maria Lucia Arias Ortiz - `mariasor@unal.edu.co`  
 Andrés Felipe Quenan Pozo - `aquenan@unal.edu.co`
 ***
-##Video
+# Video
 A continuación se presenta el video del desarrollo de este laboratorio. https://youtu.be/6MHD8qiw3HI
 
 # Introducción
