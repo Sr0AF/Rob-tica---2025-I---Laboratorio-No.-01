@@ -404,6 +404,31 @@ Luego en otro terminal ejecutar:
 ## Flechas:
 Desde el primer terminal es posible controlar la tortuga, a continuación se muestra el funcionamiento de las flechas:
 ![Funcionamiento comando por flechas](img/Flechas.jpg)
+
+## Letras:
+A continuación se muestra el funcionamiento de cada letra
+
+### Letra A:
+![Funcionamiento A](img/A.jpg)
+
+### Letra F:
+![Funcionamiento F](img/F.jpg)
+
+### Letra Q:
+![Funcionamiento Q](img/Q.jpg)
+
+### Letra P:
+![Funcionamiento P](img/P.jpg)
+
+### Letra M:
+![Funcionamiento M](img/M.jpg)
+
+### Letra L:
+![Funcionamiento A](img/L.jpg)
+
+### Letra O:
+![Funcionamiento A](img/O.jpg)
+
 # Conclusiones
 - Es necesario ajustar adecuadamente los valores de velocidad y duración de movimientos, ya que pequeñas variaciones alteran significativamente la forma final de las letras.
 - El laboratorio permitió comprender la importancia del control sobre velocidades lineales y angulares para lograr trayectorias deseadas en sistemas móviles.
